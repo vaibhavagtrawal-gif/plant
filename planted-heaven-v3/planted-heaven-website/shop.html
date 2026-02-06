@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Planted Heaven</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        🌿 Free Delivery on Orders Above ₹2000 | Based in East Delhi | Call: +91 9810629983
+    </div>
+
+    <!-- Header/Navigation -->
+    <header>
+        <nav>
+            <div class="logo-section">
+                <a href="index.html">
+                    <img src="images/logo.svg" alt="Planted Heaven" class="logo-img">
+                </a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html" class="active">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <button class="icon-btn search-btn">🔍</button>
+                <button class="icon-btn wishlist-btn">❤️</button>
+                <button class="icon-btn cart-btn">
+                    🛒
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Shop Header -->
+    <section class="shop-header">
+        <div class="shop-header-content">
+            <h1>Shop Plants</h1>
+            <p>Discover our complete collection of premium plants and gift hampers</p>
+        </div>
+    </section>
+
+    <!-- Shop Main Content -->
+    <section class="shop-main">
+        <div class="shop-container">
+            <!-- Sidebar Filters -->
+            <aside class="shop-sidebar">
+                <div class="filter-section">
+                    <h3>Filters</h3>
+                    <button class="btn-clear-filters" onclick="clearFilters()">Clear All</button>
+                </div>
+
+                <!-- Search -->
+                <div class="filter-group">
+                    <label>Search</label>
+                    <input type="text" id="searchInput" placeholder="Search plants..." oninput="filterProducts()">
+                </div>
+
+                <!-- Category Filter -->
+                <div class="filter-group">
+                    <label>Category</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" value="indoor" onchange="filterProducts()"> Indoor Plants</label>
+                        <label><input type="checkbox" value="hampers" onchange="filterProducts()"> Diwali Hampers</label>
+                        <label><input type="checkbox" value="corporate" onchange="filterProducts()"> Corporate Gifts</label>
+                        <label><input type="checkbox" value="bonsai" onchange="filterProducts()"> Bonsai</label>
+                        <label><input type="checkbox" value="trays" onchange="filterProducts()"> Decorative Trays</label>
+                    </div>
+                </div>
+
+                <!-- Price Filter -->
+                <div class="filter-group">
+                    <label>Price Range</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" value="0-1000" onchange="filterProducts()"> Under ₹1,000</label>
+                        <label><input type="checkbox" value="1000-2000" onchange="filterProducts()"> ₹1,000 - ₹2,000</label>
+                        <label><input type="checkbox" value="2000-3000" onchange="filterProducts()"> ₹2,000 - ₹3,000</label>
+                        <label><input type="checkbox" value="3000-5000" onchange="filterProducts()"> ₹3,000 - ₹5,000</label>
+                        <label><input type="checkbox" value="5000+" onchange="filterProducts()"> Above ₹5,000</label>
+                    </div>
+                </div>
+
+                <!-- Size Filter -->
+                <div class="filter-group">
+                    <label>Plant Size</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" value="small" onchange="filterProducts()"> Small (3-5")</label>
+                        <label><input type="checkbox" value="medium" onchange="filterProducts()"> Medium (5-9")</label>
+                        <label><input type="checkbox" value="large" onchange="filterProducts()"> Large (9"+)</label>
+                    </div>
+                </div>
+
+                <!-- Mobile Filter Toggle -->
+                <button class="mobile-filter-toggle" onclick="toggleFilters()">
+                    🎛️ Filters & Sort
+                </button>
+            </aside>
+
+            <!-- Products Area -->
+            <div class="shop-products">
+                <!-- Toolbar -->
+                <div class="shop-toolbar">
+                    <div class="results-count">
+                        Showing <span id="productCount">0</span> products
+                    </div>
+                    <div class="sort-options">
+                        <label>Sort by:</label>
+                        <select id="sortSelect" onchange="sortProducts()">
+                            <option value="featured">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="name">Name: A to Z</option>
+                            <option value="popular">Most Popular</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="products-grid" id="productsGrid">
+                    <!-- Products will be loaded here by JavaScript -->
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination" id="pagination">
+                    <!-- Pagination will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Planted Heaven</h4>
+                <p>Bringing life to corporate spaces and homes across India.</p>
+                <div class="social-links">
+                    <div class="social-icon">📸</div>
+                    <div class="social-icon">📘</div>
+                    <div class="social-icon">💬</div>
+                    <div class="social-icon">📧</div>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <a href="shop.html?category=indoor">Indoor Plants</a>
+                <a href="shop.html?category=hampers">Gift Hampers</a>
+                <a href="shop.html?category=corporate">Corporate Gifts</a>
+                <a href="shop.html?category=bonsai">Bonsai Collection</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>📍 Based in East Delhi, India</p>
+                <p>📞 <a href="tel:+919810629983">+91 9810629983</a></p>
+                <p>📞 <a href="tel:+919220409985">+91 9220409985</a></p>
+                <p>✉️ <a href="mailto:theplantedheaven2022@gmail.com">Email Us</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Planted Heaven. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop">↑</button>
+
+    <script src="js/products-data.js"></script>
+    <script src="js/shop.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

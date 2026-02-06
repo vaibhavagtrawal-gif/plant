@@ -1,0 +1,2008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planted Heaven - Bringing Life to Spaces</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Brand Colors from PDF */
+            --primary-green: #1a5d1a;
+            --light-green: #8fbc8f;
+            --cream: #faf8f3;
+            --gold: #c9a86a;
+            --dark: #2d3e2e;
+            --white: #ffffff;
+            --accent-pink: #e8b4b8;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--cream);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--light-green);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-green);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 5%;
+            box-shadow: 0 5px 30px rgba(26, 93, 26, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        nav.scrolled {
+            padding: 0.7rem 5%;
+            box-shadow: 0 5px 40px rgba(26, 93, 26, 0.15);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-image {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 5px 20px rgba(26, 93, 26, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .logo-image:hover {
+            transform: rotate(360deg) scale(1.1);
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-tagline {
+            font-size: 0.7rem;
+            color: var(--gold);
+            font-style: italic;
+            display: block;
+            margin-top: -5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 1rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-green), var(--light-green));
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::before {
+            width: 100%;
+        }
+
+        .cta-nav {
+            background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+            color: white !important;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            box-shadow: 0 5px 20px rgba(26, 93, 26, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .cta-nav:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(26, 93, 26, 0.4);
+        }
+
+        .cta-nav::before {
+            display: none;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .mobile-menu span {
+            width: 30px;
+            height: 3px;
+            background: var(--primary-green);
+            transition: all 0.3s ease;
+            border-radius: 10px;
+        }
+
+        /* Hero Section - Super Attractive */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 5% 80px;
+            background: linear-gradient(135deg, #faf8f3 0%, #e8f5e9 50%, #c8e6c9 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(143, 188, 143, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(201, 168, 106, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -100px;
+            left: -100px;
+            animation: float 15s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(5deg); }
+            66% { transform: translate(-20px, 20px) rotate(-5deg); }
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text {
+            animation: slideInLeft 1s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(26, 93, 26, 0.1);
+            color: var(--primary-green);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            border: 2px solid var(--light-green);
+        }
+
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--light-green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text .tagline {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--gold);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            color: var(--dark);
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+            color: white;
+            box-shadow: 0 10px 40px rgba(26, 93, 26, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(26, 93, 26, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary-green);
+            border: 2px solid var(--primary-green);
+            box-shadow: 0 10px 30px rgba(26, 93, 26, 0.15);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-green);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .hero-image-section {
+            position: relative;
+            animation: slideInRight 1s ease-out;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-images {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .hero-img-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(26, 93, 26, 0.15);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .hero-img-card:hover {
+            transform: translateY(-15px) rotate(2deg);
+            box-shadow: 0 25px 70px rgba(26, 93, 26, 0.25);
+        }
+
+        .hero-img-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .hero-img-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .hero-img-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(26, 93, 26, 0.95), transparent);
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+
+        .hero-img-card:hover .hero-img-overlay {
+            transform: translateY(0);
+        }
+
+        .hero-img-overlay h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .hero-img-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Floating Stats */
+        .floating-stats {
+            position: absolute;
+            top: 50%;
+            right: -50px;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(26, 93, 26, 0.15);
+            text-align: center;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .stat-card:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .stat-card:nth-child(3) {
+            animation-delay: 1s;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--dark);
+            opacity: 0.7;
+        }
+
+        /* About Section - Modern & Clean */
+        .about {
+            padding: 8rem 5%;
+            background: white;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 5rem;
+            position: relative;
+        }
+
+        .section-label {
+            font-size: 1rem;
+            color: var(--gold);
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: inline-block;
+            position: relative;
+        }
+
+        .section-label::before,
+        .section-label::after {
+            content: '🌿';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .section-label::before {
+            left: -30px;
+        }
+
+        .section-label::after {
+            right: -30px;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--dark);
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        .about-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-img-main {
+            width: 100%;
+            height: 600px;
+            background: url('https://images.unsplash.com/photo-1463320726281-696a485928c7?w=800') center/cover;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(26, 93, 26, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-img-main::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(26, 93, 26, 0.3), transparent);
+        }
+
+        .about-img-float {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 250px;
+            height: 250px;
+            background: url('https://images.unsplash.com/photo-1466781783364-36c955e42a7f?w=400') center/cover;
+            border-radius: 25px;
+            border: 8px solid white;
+            box-shadow: 0 15px 50px rgba(26, 93, 26, 0.25);
+        }
+
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--dark);
+            opacity: 0.85;
+            margin-bottom: 1.5rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .feature-item {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f0f9f0, white);
+            border-radius: 20px;
+            border-left: 4px solid var(--light-green);
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(26, 93, 26, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-item h4 {
+            font-size: 1.2rem;
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            margin: 0;
+        }
+
+        /* Founders Section - Elegant */
+        .founders {
+            padding: 8rem 5%;
+            background: linear-gradient(135deg, #faf8f3 0%, #f0f9f0 100%);
+        }
+
+        .founders-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+        }
+
+        .founder-card {
+            background: white;
+            border-radius: 30px;
+            padding: 0;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(26, 93, 26, 0.1);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .founder-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary-green), var(--light-green), var(--gold));
+        }
+
+        .founder-card:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 30px 80px rgba(26, 93, 26, 0.2);
+        }
+
+        .founder-image-wrapper {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(135deg, var(--light-green), var(--primary-green));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .founder-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .founder-card:hover .founder-image-wrapper img {
+            transform: scale(1.1);
+        }
+
+        .founder-img-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+        }
+
+        .founder-content {
+            padding: 2.5rem;
+        }
+
+        .founder-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .founder-role {
+            color: var(--gold);
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .founder-content p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--dark);
+            opacity: 0.85;
+        }
+
+        .founder-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--light-green), var(--primary-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(26, 93, 26, 0.3);
+        }
+
+        /* Services Section - Card Grid */
+        .services {
+            padding: 8rem 5%;
+            background: white;
+        }
+
+        .services-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, white, #f9f9f9);
+            border-radius: 30px;
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 15px 50px rgba(26, 93, 26, 0.08);
+            border: 1px solid rgba(143, 188, 143, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(143, 188, 143, 0.1) 0%, transparent 70%);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+            transform: rotate(45deg);
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 70px rgba(26, 93, 26, 0.15);
+            border-color: var(--light-green);
+        }
+
+        .service-icon-wrapper {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, var(--light-green), var(--primary-green));
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            box-shadow: 0 10px 30px rgba(26, 93, 26, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card:hover .service-icon-wrapper {
+            transform: rotateY(360deg);
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--dark);
+            opacity: 0.85;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Gallery Section - Masonry Style */
+        .gallery {
+            padding: 8rem 5%;
+            background: linear-gradient(135deg, #faf8f3 0%, #f0f9f0 100%);
+        }
+
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 4rem;
+        }
+
+        .filter-btn {
+            padding: 1rem 2.5rem;
+            background: white;
+            border: 2px solid var(--light-green);
+            border-radius: 50px;
+            color: var(--primary-green);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+            color: white;
+            border-color: var(--primary-green);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(26, 93, 26, 0.3);
+        }
+
+        .gallery-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(26, 93, 26, 0.1);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 70px rgba(26, 93, 26, 0.2);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 320px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-img::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(26, 93, 26, 0.8), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-img::before {
+            opacity: 1;
+        }
+
+        .gallery-info {
+            padding: 2rem;
+        }
+
+        .gallery-category {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(143, 188, 143, 0.2), rgba(26, 93, 26, 0.2));
+            color: var(--primary-green);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .gallery-info h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            margin-bottom: 0.8rem;
+        }
+
+        .gallery-info p {
+            font-size: 0.95rem;
+            color: var(--dark);
+            opacity: 0.75;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .gallery-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .view-btn {
+            padding: 0.7rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .view-btn:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(26, 93, 26, 0.3);
+        }
+
+        /* Brands Marquee */
+        .brands {
+            padding: 6rem 5%;
+            background: white;
+            overflow: hidden;
+        }
+
+        .brands-track {
+            display: flex;
+            gap: 5rem;
+            animation: scroll 40s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .brand-item {
+            flex-shrink: 0;
+            width: 200px;
+            height: 100px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(26, 93, 26, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            transition: all 0.3s ease;
+        }
+
+        .brand-item:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(26, 93, 26, 0.2);
+        }
+
+        /* Contact Section - Modern Form */
+        .contact {
+            padding: 8rem 5%;
+            background: linear-gradient(135deg, var(--primary-green) 0%, #0d3d0d 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact::before {
+            content: '🌿';
+            position: absolute;
+            font-size: 20rem;
+            opacity: 0.05;
+            top: -50px;
+            right: -50px;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .contact .section-label {
+            color: var(--light-green);
+        }
+
+        .contact .section-header h2,
+        .contact .section-header p {
+            color: white;
+        }
+
+        .contact-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-info-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .contact-info-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(10px);
+        }
+
+        .contact-icon-wrapper {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--light-green), rgba(255, 255, 255, 0.3));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .contact-info-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info-item p,
+        .contact-info-item a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .contact-form-wrapper {
+            background: white;
+            padding: 3.5rem;
+            border-radius: 30px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-form-wrapper h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary-green);
+            margin-bottom: 2rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.7rem;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1.2rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+            background: #fafafa;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--light-green);
+            background: white;
+            box-shadow: 0 5px 20px rgba(143, 188, 143, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(26, 93, 26, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(26, 93, 26, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: #0d3d0d;
+            color: white;
+            padding: 4rem 5% 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--light-green);
+        }
+
+        .footer-section p {
+            line-height: 1.8;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            display: block;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            margin-bottom: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--light-green);
+            transform: translateX(5px);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .footer-social-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .footer-social-icon:hover {
+            background: var(--light-green);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.6;
+        }
+
+        /* Scroll to Top */
+        .scroll-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.8rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(26, 93, 26, 0.4);
+            z-index: 999;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(26, 93, 26, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-content,
+            .about-content,
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .founders-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 3.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 3rem;
+            }
+
+            .floating-stats {
+                display: none;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 80%;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                padding: 6rem 2rem 2rem;
+                gap: 2rem;
+                transition: left 0.4s ease;
+                box-shadow: 5px 0 30px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .mobile-menu.active span:nth-child(1) {
+                transform: rotate(45deg) translate(8px, 8px);
+            }
+
+            .mobile-menu.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .mobile-menu.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(8px, -8px);
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-text .tagline {
+                font-size: 1.3rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .services-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .features-grid,
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-images {
+                grid-template-columns: 1fr;
+            }
+
+            .about-img-float {
+                width: 150px;
+                height: 150px;
+                bottom: -20px;
+                right: -20px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-text {
+                font-size: 1.3rem;
+            }
+
+            .hero {
+                padding-top: 100px;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .btn {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+
+            .contact-form-wrapper {
+                padding: 2rem;
+            }
+        }
+
+        /* Loading Animation */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .loading {
+            animation: pulse 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <div class="logo-image">🌿</div>
+                <div>
+                    <div class="logo-text">Planted Heaven</div>
+                    <span class="logo-tagline">theplantedheaven</span>
+                </div>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact" class="cta-nav">Contact Us ✨</a></li>
+            </ul>
+            <div class="mobile-menu" id="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="hero-badge">🌱 Premium Plant Solutions</span>
+                <h1>Planted Heaven</h1>
+                <p class="tagline">"Bringing Life to Corporate Spaces"</p>
+                <p>Welcome to Planted Heaven, where nature meets nurture. We curate lush green experiences for homes, offices, events, and more—transforming spaces into serene sanctuaries filled with life and beauty.</p>
+                <div class="hero-buttons">
+                    <a href="#gallery" class="btn btn-primary">Explore Collection 🌿</a>
+                    <a href="#contact" class="btn btn-secondary">Get Quote</a>
+                </div>
+            </div>
+            <div class="hero-image-section">
+                <div class="hero-images">
+                    <div class="hero-img-card">
+                        <img src="https://images.unsplash.com/photo-1509423350716-97f9360b4e09?w=600" alt="Indoor Plants">
+                        <div class="hero-img-overlay">
+                            <h4>Indoor Plants</h4>
+                            <p>Fresh & Healthy Selection</p>
+                        </div>
+                    </div>
+                    <div class="hero-img-card">
+                        <img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=600" alt="Gift Hampers">
+                        <div class="hero-img-overlay">
+                            <h4>Gift Hampers</h4>
+                            <p>Curated with Love</p>
+                        </div>
+                    </div>
+                    <div class="hero-img-card">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" alt="Office Plants">
+                        <div class="hero-img-overlay">
+                            <h4>Corporate Solutions</h4>
+                            <p>Professional Elegance</p>
+                        </div>
+                    </div>
+                    <div class="hero-img-card">
+                        <img src="https://images.unsplash.com/photo-1466781783364-36c955e42a7f?w=600" alt="Plant Decor">
+                        <div class="hero-img-overlay">
+                            <h4>Aesthetic Styling</h4>
+                            <p>Living Art</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="floating-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Plant Varieties</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="section-header">
+            <div class="section-label">Our Story</div>
+            <h2>About Planted Heaven</h2>
+            <p>A passionate journey of connecting people with nature</p>
+        </div>
+        <div class="about-content">
+            <div class="about-image">
+                <div class="about-img-main"></div>
+                <div class="about-img-float"></div>
+            </div>
+            <div class="about-text">
+                <h3>Where Nature Meets Nurture</h3>
+                <p>Born from a love for nature and a vision to reconnect people with the earth, Planted Heaven was founded to make green living more accessible, aesthetic, and meaningful.</p>
+                <p>Whether it's a tiny desk succulent or an entire indoor jungle, we believe that plants have the power to turn any space into a sanctuary. At Planted Heaven, we don't just sell plants — we create living art.</p>
+                <p><strong>Our Philosophy:</strong> Every leaf, every pot, and every setup is crafted with intention. Our goal is to inspire mindful living, nurture green habits, and make plant care a joyful, soulful experience.</p>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">✨</div>
+                        <h4>Handpicked Quality</h4>
+                        <p>Every plant carefully selected for health & beauty</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎨</div>
+                        <h4>Aesthetic Design</h4>
+                        <p>Beautiful styling with eco-friendly packaging</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">💚</div>
+                        <h4>Personal Care</h4>
+                        <p>Customized recommendations & aftercare support</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🚚</div>
+                        <h4>Safe Delivery</h4>
+                        <p>Reliable delivery through trusted partners</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founders Section -->
+    <section class="founders">
+        <div class="section-header">
+            <div class="section-label">Leadership</div>
+            <h2>Meet Our Founders</h2>
+            <p>The passionate minds nurturing Planted Heaven</p>
+        </div>
+        <div class="founders-grid">
+            <div class="founder-card">
+                <div class="founder-image-wrapper">
+                    <div class="founder-img-placeholder">👩‍🌾</div>
+                </div>
+                <div class="founder-content">
+                    <h3>Diksha Bhutani</h3>
+                    <p class="founder-role">Founder & Creative Director</p>
+                    <p>A passionate plant lover who believes that greenery brings peace, joy, and life into any space. What began as a personal hobby turned into a vision — to help people experience the calm and beauty that plants offer. With a love for nature and a creative eye, Diksha built Planted Heaven to make plant care easy, meaningful, and stylish.</p>
+                    <div class="founder-social">
+                        <div class="social-icon">📸</div>
+                        <div class="social-icon">💬</div>
+                        <div class="social-icon">📧</div>
+                    </div>
+                </div>
+            </div>
+            <div class="founder-card">
+                <div class="founder-image-wrapper">
+                    <div class="founder-img-placeholder">👨‍💼</div>
+                </div>
+                <div class="founder-content">
+                    <h3>Mohit Bhutani</h3>
+                    <p class="founder-role">Co-Founder & Managing Director</p>
+                    <p>Overseeing the brand's financial strategy and operations, Mohit ensures sustainable growth while aligning business goals with Planted Heaven's green vision. He also serves as the Managing Director of Creative Signage Solutions, a leading firm in reflective media and signage solutions across India.</p>
+                    <div class="founder-social">
+                        <div class="social-icon">📸</div>
+                        <div class="social-icon">💼</div>
+                        <div class="social-icon">📧</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="section-header">
+            <div class="section-label">What We Offer</div>
+            <h2>Our Services</h2>
+            <p>Comprehensive plant solutions for every need</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon-wrapper">🌿</div>
+                <h3>Indoor Plants</h3>
+                <p>Curated collection of healthy, beautiful plants perfect for homes and offices.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon-wrapper">🌳</div>
+                <h3>Outdoor Plants</h3>
+                <p>Hardy outdoor varieties to transform your gardens and outdoor spaces.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon-wrapper">🎨</div>
+                <h3>Plant Styling</h3>
+                <p>Professional styling services to create stunning green corners.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon-wrapper">🎁</div>
+                <h3>Custom Gifting</h3>
+                <p>Thoughtfully curated plant hampers for special occasions.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon-wrapper">🏢</div>
+                <h3>Corporate Solutions</h3>
+                <p>Premium corporate gifting and green corner setups for offices.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon-wrapper">🎓</div>
+                <h3>Workshops & Events</h3>
+                <p>Engaging plant care workshops and event decorations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="section-header">
+            <div class="section-label">Our Collection</div>
+            <h2>Plant Gallery</h2>
+            <p>Explore our beautiful range of plants and arrangements</p>
+        </div>
+        <div class="gallery-filters">
+            <button class="filter-btn active" data-filter="all">All Products</button>
+            <button class="filter-btn" data-filter="plants">Indoor Plants</button>
+            <button class="filter-btn" data-filter="hampers">Diwali Hampers</button>
+            <button class="filter-btn" data-filter="trays">Decorative Trays</button>
+            <button class="filter-btn" data-filter="corporate">Corporate Gifts</button>
+        </div>
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Gallery items will be populated by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="brands">
+        <div class="section-header">
+            <div class="section-label">Trusted By</div>
+            <h2>Brands We've Worked With</h2>
+            <p>Proud partners with leading companies</p>
+        </div>
+        <div class="brands-track">
+            <div class="brand-item">🏢</div>
+            <div class="brand-item">🏪</div>
+            <div class="brand-item">🏛️</div>
+            <div class="brand-item">🏬</div>
+            <div class="brand-item">🏭</div>
+            <div class="brand-item">🏢</div>
+            <div class="brand-item">🏪</div>
+            <div class="brand-item">🏛️</div>
+            <div class="brand-item">🏬</div>
+            <div class="brand-item">🏭</div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-header">
+            <div class="section-label">Get in Touch</div>
+            <h2>Contact Us</h2>
+            <p>Let's grow together! Reach out for inquiries and collaborations</p>
+        </div>
+        <div class="contact-wrapper">
+            <div class="contact-info-section">
+                <h3>Let's Connect</h3>
+                <div class="contact-info-item">
+                    <div class="contact-icon-wrapper">📍</div>
+                    <div>
+                        <h4>Location</h4>
+                        <p>Based in East Delhi, India<br>Serving across NCR and beyond</p>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="contact-icon-wrapper">📞</div>
+                    <div>
+                        <h4>Phone</h4>
+                        <p><a href="tel:+919810629983">+91 9810629983</a></p>
+                        <p><a href="tel:+919220409985">+91 9220409985</a></p>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="contact-icon-wrapper">✉️</div>
+                    <div>
+                        <h4>Email</h4>
+                        <p><a href="mailto:theplantedheaven2022@gmail.com">theplantedheaven2022@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="contact-icon-wrapper">📱</div>
+                    <div>
+                        <h4>Follow Us</h4>
+                        <p>@plantedheaven</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form-wrapper">
+                <h3>Send Us a Message 💚</h3>
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="interest">Interest *</label>
+                            <select id="interest" required>
+                                <option value="">Select...</option>
+                                <option value="indoor">Indoor Plants</option>
+                                <option value="corporate">Corporate Gifting</option>
+                                <option value="event">Event Decoration</option>
+                                <option value="workshop">Workshops</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message 🌿</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Planted Heaven</h4>
+                <p>Bringing life to corporate spaces and homes across India. Making green living accessible, aesthetic, and meaningful.</p>
+                <div class="footer-social">
+                    <div class="footer-social-icon">📸</div>
+                    <div class="footer-social-icon">💬</div>
+                    <div class="footer-social-icon">📘</div>
+                    <div class="footer-social-icon">📧</div>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <a href="#services">Indoor Plants</a>
+                <a href="#services">Corporate Gifting</a>
+                <a href="#services">Plant Styling</a>
+                <a href="#services">Workshops</a>
+                <a href="#services">Event Decor</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <a href="tel:+919810629983">+91 9810629983</a>
+                <a href="tel:+919220409985">+91 9220409985</a>
+                <a href="mailto:theplantedheaven2022@gmail.com">Email Us</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Planted Heaven. All rights reserved. Designed with 💚 by Diksha Bhutani</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop">↑</button>
+
+    <script>
+        // Gallery Data
+        const galleryData = [
+            {
+                category: 'trays hampers',
+                image: 'https://images.unsplash.com/photo-1545241047-6083a3684587?w=600',
+                title: 'Zamia & Snake Plant Tray',
+                description: '12" Tray with Gold Buddha & Blue Metal Hamsa',
+                price: '₹4,000'
+            },
+            {
+                category: 'trays hampers',
+                image: 'https://images.unsplash.com/photo-1470058869958-2a77ade41c02?w=600',
+                title: 'Wooden Tray Special',
+                description: 'Buddha, Urli Candle, Pine Cone & Plants',
+                price: '₹4,000'
+            },
+            {
+                category: 'plants trays',
+                image: 'https://images.unsplash.com/photo-1463320898484-cdee8141c787?w=600',
+                title: 'Ficus Bonsai Special',
+                description: 'With Ganesha, Lotus Diya & Rudraksh',
+                price: '₹3,800'
+            },
+            {
+                category: 'trays hampers',
+                image: 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=600',
+                title: 'ZZ Curlyleaf Tray',
+                description: 'Wooden tray with scented candle & decor',
+                price: '₹4,500'
+            },
+            {
+                category: 'hampers corporate',
+                image: 'https://images.unsplash.com/photo-1511406361295-0a1ff814c0ce?w=600',
+                title: 'Guruji Swaroop Hamper',
+                description: 'German silver frame, candle & plant',
+                price: '₹3,500'
+            },
+            {
+                category: 'hampers',
+                image: 'https://images.unsplash.com/photo-1509423350716-97f9360b4e09?w=600',
+                title: 'Lotus Print Tray',
+                description: 'Aglaonema plant with scented candle',
+                price: '₹2,800'
+            },
+            {
+                category: 'hampers corporate',
+                image: 'https://images.unsplash.com/photo-1466781783364-36c955e42a7f?w=600',
+                title: 'Copper Wellness Hamper',
+                description: 'Copper bottle, glasses, candle & plant',
+                price: '₹3,200'
+            },
+            {
+                category: 'hampers',
+                image: 'https://images.unsplash.com/photo-1459156212016-c812468e2115?w=600',
+                title: 'Antique Basket Hamper',
+                description: 'Zamia plant, incense, almonds & candle',
+                price: '₹4,500'
+            },
+            {
+                category: 'plants',
+                image: 'https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=600',
+                title: 'Aglaonema Pink Lipstick',
+                description: 'With miniature fairy wings',
+                price: '₹1,400'
+            },
+            {
+                category: 'plants',
+                image: 'https://images.unsplash.com/photo-1463320726281-696a485928c7?w=600',
+                title: 'Chamaedorea Palm',
+                description: 'With Baby Buddha',
+                price: '₹1,500'
+            },
+            {
+                category: 'plants',
+                image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600',
+                title: 'Snake Plant Premium',
+                description: 'Air purifying indoor plant',
+                price: '₹999'
+            },
+            {
+                category: 'plants',
+                image: 'https://images.unsplash.com/photo-1470058869958-2a77ade41c02?w=600',
+                title: 'Peace Lily',
+                description: 'Beautiful white blooms',
+                price: '₹1,400'
+            },
+            {
+                category: 'plants',
+                image: 'https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?w=600',
+                title: 'Money Plant Arrangement',
+                description: 'With White Buddha',
+                price: '₹1,700'
+            },
+            {
+                category: 'plants',
+                image: 'https://images.unsplash.com/photo-1463936575829-25148e1db1b8?w=600',
+                title: 'Curly ZZ Plant',
+                description: 'With Buddha & Lotus Diya',
+                price: '₹1,800'
+            },
+            {
+                category: 'plants corporate',
+                image: 'https://images.unsplash.com/photo-1463320898484-cdee8141c787?w=600',
+                title: '12-Year Ficus Bonsai',
+                description: 'Premium bonsai with Buddha & Bell',
+                price: '₹4,200'
+            },
+            {
+                category: 'plants corporate',
+                image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600',
+                title: 'Tall ZZ Plant',
+                description: 'Gold Buddha with Blue Hamsa',
+                price: '₹3,800'
+            }
+        ];
+
+        // Populate Gallery
+        function populateGallery(filter = 'all') {
+            const gallery = document.getElementById('galleryGrid');
+            gallery.innerHTML = '';
+            
+            const filtered = filter === 'all' 
+                ? galleryData 
+                : galleryData.filter(item => item.category.includes(filter));
+            
+            filtered.forEach((item, index) => {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item';
+                galleryItem.style.animationDelay = `${index * 0.1}s`;
+                galleryItem.innerHTML = `
+                    <div class="gallery-img" style="background-image: url('${item.image}')"></div>
+                    <div class="gallery-info">
+                        <span class="gallery-category">${item.category.split(' ')[0]}</span>
+                        <h4>${item.title}</h4>
+                        <p>${item.description}</p>
+                        <div class="gallery-price">
+                            <span class="price">${item.price}</span>
+                            <button class="view-btn">View Details</button>
+                        </div>
+                    </div>
+                `;
+                gallery.appendChild(galleryItem);
+            });
+        }
+
+        // Gallery Filter
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                populateGallery(btn.dataset.filter);
+            });
+        });
+
+        // Mobile Menu
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Navbar Scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll to Top
+        const scrollTop = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        scrollTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Contact Form
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon. 🌿');
+            e.target.reset();
+        });
+
+        // Initialize Gallery
+        populateGallery();
+
+        // Intersection Observer for Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.service-card, .founder-card, .feature-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(50px)';
+            el.style.transition = 'all 0.8s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
