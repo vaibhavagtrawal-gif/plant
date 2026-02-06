@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Planted Heaven</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        🌿 Free Delivery on Orders Above ₹2000 | Based in East Delhi | Call: +91 9810629983
+    </div>
+
+    <!-- Header/Navigation -->
+    <header>
+        <nav>
+            <div class="logo-section">
+                <a href="index.html">
+                    <img src="images/logo.svg" alt="Planted Heaven" class="logo-img">
+                </a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <button class="icon-btn search-btn">🔍</button>
+                <button class="icon-btn wishlist-btn">❤️</button>
+                <button class="icon-btn cart-btn">
+                    🛒
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="contact-hero-content">
+            <h1>Get In Touch</h1>
+            <p>We'd love to hear from you. Let's grow together!</p>
+        </div>
+    </section>
+
+    <!-- Contact Main -->
+    <section class="contact-main">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info-section">
+                    <h2>Contact Information</h2>
+                    <p>Reach out to us for inquiries, orders, or collaborations. We're here to help!</p>
+
+                    <div class="contact-info-items">
+                        <div class="contact-info-card">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-details">
+                                <h4>Location</h4>
+                                <p>Based in East Delhi, India</p>
+                                <p>Serving across NCR and beyond</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-card">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-details">
+                                <h4>Phone</h4>
+                                <p><a href="tel:+919810629983">+91 9810629983</a></p>
+                                <p><a href="tel:+919220409985">+91 9220409985</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-card">
+                            <div class="contact-icon">✉️</div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p><a href="mailto:theplantedheaven2022@gmail.com">theplantedheaven2022@gmail.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-card">
+                            <div class="contact-icon">⏰</div>
+                            <div class="contact-details">
+                                <h4>Working Hours</h4>
+                                <p>Monday - Saturday: 9:00 AM - 7:00 PM</p>
+                                <p>Sunday: 10:00 AM - 5:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-connect">
+                        <h3>Connect With Us</h3>
+                        <div class="social-links-contact">
+                            <a href="#" class="social-link">📸 Instagram</a>
+                            <a href="#" class="social-link">📘 Facebook</a>
+                            <a href="#" class="social-link">💬 WhatsApp</a>
+                            <a href="#" class="social-link">📧 Email</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <div class="contact-form-wrapper">
+                        <h2>Send Us a Message</h2>
+                        <p>Fill out the form below and we'll get back to you shortly</p>
+
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Your Name *</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">Subject *</label>
+                                    <select id="subject" name="subject" required>
+                                        <option value="">Select a subject</option>
+                                        <option value="product">Product Inquiry</option>
+                                        <option value="corporate">Corporate Gifting</option>
+                                        <option value="event">Event Decoration</option>
+                                        <option value="workshop">Workshop Booking</option>
+                                        <option value="support">Support</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Your Message *</label>
+                                <textarea id="message" name="message" rows="6" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                Send Message 🌿
+                            </button>
+
+                            <div id="formMessage" class="form-message"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery Information -->
+    <section class="delivery-info">
+        <div class="container">
+            <div class="section-header center">
+                <h2>Delivery Information</h2>
+            </div>
+            <div class="delivery-grid">
+                <div class="delivery-card">
+                    <div class="delivery-icon">📦</div>
+                    <h3>Safe Packaging</h3>
+                    <p>All products are packaged with care. Box packaging with tissue wrap is complimentary, and jute bags are available at nominal charges.</p>
+                </div>
+                <div class="delivery-card">
+                    <div class="delivery-icon">🚚</div>
+                    <h3>Reliable Transit</h3>
+                    <p>We deliver all orders through Ola & Uber for safety. Delivery charges depend on your location and are paid directly as per actuals.</p>
+                </div>
+                <div class="delivery-card">
+                    <div class="delivery-icon">✅</div>
+                    <h3>Quality Assurance</h3>
+                    <p>We ensure you receive the same product as ordered. Any changes in color or item are approved by you before dispatch.</p>
+                </div>
+                <div class="delivery-card">
+                    <div class="delivery-icon">🚛</div>
+                    <h3>Bulk Orders</h3>
+                    <p>Bulk orders are delivered through Porter for secure and efficient transit of larger quantities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header center">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Do you deliver outside Delhi NCR?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Currently, we primarily serve Delhi NCR region. For deliveries outside NCR, please contact us directly to discuss options and availability.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What is your return policy?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We ensure high-quality plants. If you receive a damaged plant, please contact us within 24 hours with photos, and we'll arrange a replacement.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Do you offer plant care support?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We provide comprehensive care guides with every plant and offer ongoing support via phone, email, or WhatsApp.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Can I customize gift hampers?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We offer customized hampers for corporate gifting, weddings, festivals, and special occasions. Contact us to discuss your requirements.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How do I place a bulk order?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>For bulk orders, please call us directly at +91 9810629983 or +91 9220409985, or send an email with your requirements.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Do you conduct plant care workshops?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we organize workshops and events. Contact us to book a workshop for your team, community, or event.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Planted Heaven</h4>
+                <p>Bringing life to corporate spaces and homes across India.</p>
+                <div class="social-links">
+                    <div class="social-icon">📸</div>
+                    <div class="social-icon">📘</div>
+                    <div class="social-icon">💬</div>
+                    <div class="social-icon">📧</div>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <a href="shop.html?category=indoor">Indoor Plants</a>
+                <a href="shop.html?category=hampers">Gift Hampers</a>
+                <a href="shop.html?category=corporate">Corporate Gifts</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>📍 Based in East Delhi, India</p>
+                <p>📞 <a href="tel:+919810629983">+91 9810629983</a></p>
+                <p>📞 <a href="tel:+919220409985">+91 9220409985</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Planted Heaven. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop">↑</button>
+
+    <script src="js/contact.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

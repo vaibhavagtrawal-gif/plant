@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Planted Heaven</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        🌿 Free Delivery on Orders Above ₹2000 | Based in East Delhi | Call: +91 9810629983
+    </div>
+
+    <!-- Header/Navigation -->
+    <header>
+        <nav>
+            <div class="logo-section">
+                <a href="index.html">
+                    <img src="images/logo.svg" alt="Planted Heaven" class="logo-img">
+                </a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <button class="icon-btn search-btn">🔍</button>
+                <button class="icon-btn wishlist-btn">❤️</button>
+                <button class="icon-btn cart-btn">
+                    🛒
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> / 
+            <a href="shop.html">Shop</a> / 
+            <span id="productName">Product</span>
+        </div>
+    </div>
+
+    <!-- Product Detail -->
+    <section class="product-detail">
+        <div class="container">
+            <div class="product-detail-grid">
+                <!-- Product Images -->
+                <div class="product-images">
+                    <div class="main-image" id="mainImage">
+                        <img src="https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=800" alt="Product">
+                    </div>
+                    <div class="thumbnail-images" id="thumbnails">
+                        <!-- Thumbnails loaded by JS -->
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-details-info">
+                    <div class="product-badge-detail" id="productBadge"></div>
+                    <h1 id="productTitle">Product Name</h1>
+                    <div class="product-rating-detail">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <span class="rating-count">(142 reviews)</span>
+                    </div>
+                    
+                    <div class="product-price-detail">
+                        <span class="current-price" id="productPrice">₹1,400</span>
+                        <span class="original-price" id="originalPrice"></span>
+                    </div>
+
+                    <div class="product-description" id="productDescription">
+                        <p>Loading product details...</p>
+                    </div>
+
+                    <div class="product-specs" id="productSpecs">
+                        <!-- Loaded by JS -->
+                    </div>
+
+                    <div class="product-actions">
+                        <div class="quantity-selector">
+                            <button onclick="decreaseQty()">-</button>
+                            <input type="number" id="quantity" value="1" min="1">
+                            <button onclick="increaseQty()">+</button>
+                        </div>
+                        <button class="btn btn-primary btn-add-cart" onclick="addToCartDetail()">
+                            🛒 Add to Cart
+                        </button>
+                        <button class="btn-wishlist-detail" onclick="toggleWishlist()">
+                            ❤️
+                        </button>
+                    </div>
+
+                    <div class="product-meta">
+                        <div class="meta-item">
+                            <strong>Category:</strong> <span id="productCategory"></span>
+                        </div>
+                        <div class="meta-item">
+                            <strong>Stock:</strong> <span class="in-stock">In Stock</span>
+                        </div>
+                        <div class="meta-item">
+                            <strong>SKU:</strong> <span id="productSKU"></span>
+                        </div>
+                    </div>
+
+                    <div class="product-features">
+                        <div class="feature">✓ Free delivery above ₹2000</div>
+                        <div class="feature">✓ Safe packaging & transit</div>
+                        <div class="feature">✓ Aftercare support included</div>
+                        <div class="feature">✓ Handpicked quality plants</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Tabs -->
+            <div class="product-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" onclick="showTab('description')">Description</button>
+                    <button class="tab-btn" onclick="showTab('care')">Care Guide</button>
+                    <button class="tab-btn" onclick="showTab('reviews')">Reviews</button>
+                </div>
+
+                <div class="tab-content">
+                    <div id="description" class="tab-pane active">
+                        <h3>Product Description</h3>
+                        <p id="fullDescription">Loading...</p>
+                    </div>
+
+                    <div id="care" class="tab-pane">
+                        <h3>Plant Care Guide</h3>
+                        <div class="care-guide">
+                            <div class="care-item">
+                                <div class="care-icon">☀️</div>
+                                <div class="care-content">
+                                    <h4>Light</h4>
+                                    <p>Bright indirect light. Avoid direct sunlight.</p>
+                                </div>
+                            </div>
+                            <div class="care-item">
+                                <div class="care-icon">💧</div>
+                                <div class="care-content">
+                                    <h4>Water</h4>
+                                    <p>Water when top 2 inches of soil are dry.</p>
+                                </div>
+                            </div>
+                            <div class="care-item">
+                                <div class="care-icon">🌡️</div>
+                                <div class="care-content">
+                                    <h4>Temperature</h4>
+                                    <p>Ideal range: 18-24°C (65-75°F)</p>
+                                </div>
+                            </div>
+                            <div class="care-item">
+                                <div class="care-icon">🌿</div>
+                                <div class="care-content">
+                                    <h4>Humidity</h4>
+                                    <p>Moderate to high humidity preferred.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="reviews" class="tab-pane">
+                        <h3>Customer Reviews</h3>
+                        <div class="reviews-summary">
+                            <div class="average-rating">
+                                <span class="big-rating">4.8</span>
+                                <div class="stars-large">⭐⭐⭐⭐⭐</div>
+                                <p>Based on 142 reviews</p>
+                            </div>
+                        </div>
+                        <div class="reviews-list">
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-avatar">👩</div>
+                                    <div class="reviewer-info">
+                                        <h4>Priya Sharma</h4>
+                                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                                    </div>
+                                </div>
+                                <p class="review-text">"Beautiful plant! Arrived in perfect condition with excellent packaging. Very happy with my purchase."</p>
+                                <div class="review-date">2 days ago</div>
+                            </div>
+
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-avatar">👨</div>
+                                    <div class="reviewer-info">
+                                        <h4>Rajesh Kumar</h4>
+                                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                                    </div>
+                                </div>
+                                <p class="review-text">"Great quality and the care instructions provided were very helpful. Highly recommend!"</p>
+                                <div class="review-date">1 week ago</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="related-products">
+                <h2>You May Also Like</h2>
+                <div class="products-grid" id="relatedProducts">
+                    <!-- Loaded by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Planted Heaven</h4>
+                <p>Bringing life to corporate spaces and homes across India.</p>
+                <div class="social-links">
+                    <div class="social-icon">📸</div>
+                    <div class="social-icon">📘</div>
+                    <div class="social-icon">💬</div>
+                    <div class="social-icon">📧</div>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <a href="shop.html?category=indoor">Indoor Plants</a>
+                <a href="shop.html?category=hampers">Gift Hampers</a>
+                <a href="shop.html?category=corporate">Corporate Gifts</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>📍 Based in East Delhi, India</p>
+                <p>📞 <a href="tel:+919810629983">+91 9810629983</a></p>
+                <p>📞 <a href="tel:+919220409985">+91 9220409985</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Planted Heaven. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop">↑</button>
+
+    <script src="js/products-data.js"></script>
+    <script src="js/product-detail.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

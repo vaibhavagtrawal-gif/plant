@@ -1,0 +1,22 @@
+<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="400" height="200" fill="#9ba89a"/>
+    
+    <!-- Leaf illustration -->
+    <path d="M120 60 Q100 40, 90 50 Q80 60, 95 80 L120 60 M120 60 Q140 40, 150 50 Q160 60, 145 80 L120 60 M120 60 L120 100 M100 70 Q90 80, 105 95 M140 70 Q150 80, 135 95 M110 85 Q100 95, 115 105 M130 85 Q140 95, 125 105" 
+          stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+    
+    <!-- "P" in green -->
+    <path d="M90 120 L90 180 M90 120 L120 120 Q135 120, 135 140 Q135 160, 120 160 L90 160" 
+          stroke="#2d5016" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- "lanted" in white -->
+    <text x="145" y="165" font-family="Quicksand, sans-serif" font-size="48" font-weight="400" fill="white">lanted</text>
+    
+    <!-- "Heaven" in white -->
+    <text x="110" y="195" font-family="Quicksand, sans-serif" font-size="42" font-weight="400" fill="white">Heaven</text>
+    
+    <!-- Registered mark -->
+    <circle cx="370" cy="85" r="18" fill="none" stroke="white" stroke-width="2"/>
+    <text x="365" y="92" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">R</text>
+</svg>
