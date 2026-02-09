@@ -1,22 +1,25 @@
-<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-    <!-- Background -->
-    <rect width="400" height="200" fill="#9ba89a"/>
-    
-    <!-- Leaf illustration -->
-    <path d="M120 60 Q100 40, 90 50 Q80 60, 95 80 L120 60 M120 60 Q140 40, 150 50 Q160 60, 145 80 L120 60 M120 60 L120 100 M100 70 Q90 80, 105 95 M140 70 Q150 80, 135 95 M110 85 Q100 95, 115 105 M130 85 Q140 95, 125 105" 
-          stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
-    
-    <!-- "P" in green -->
-    <path d="M90 120 L90 180 M90 120 L120 120 Q135 120, 135 140 Q135 160, 120 160 L90 160" 
-          stroke="#2d5016" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-    
-    <!-- "lanted" in white -->
-    <text x="145" y="165" font-family="Quicksand, sans-serif" font-size="48" font-weight="400" fill="white">lanted</text>
-    
-    <!-- "Heaven" in white -->
-    <text x="110" y="195" font-family="Quicksand, sans-serif" font-size="42" font-weight="400" fill="white">Heaven</text>
-    
-    <!-- Registered mark -->
-    <circle cx="370" cy="85" r="18" fill="none" stroke="white" stroke-width="2"/>
-    <text x="365" y="92" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">R</text>
+<svg width="220" height="60" viewBox="0 0 220 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2ecc71;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#27ae60;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Modern Leaf Icon -->
+  <g transform="translate(5, 10)">
+    <path d="M20 5 Q10 0, 5 8 Q0 16, 8 24 Q16 32, 24 28 Q32 24, 28 16 Q24 8, 20 5 Z" 
+          fill="url(#leafGradient)" opacity="0.9"/>
+    <path d="M20 5 Q25 8, 28 16" stroke="#1e8449" stroke-width="1.5" fill="none"/>
+    <path d="M18 8 Q28 5, 33 13 Q38 21, 30 27 Q22 33, 16 29 Q10 25, 14 17 Q16 12, 18 8 Z" 
+          fill="url(#leafGradient)" opacity="0.7"/>
+  </g>
+  
+  <text x="48" y="28" font-family="'Poppins', 'Quicksand', sans-serif" 
+        font-size="22" font-weight="700" fill="#2c3e50" letter-spacing="-0.5">Planted</text>
+  <text x="48" y="48" font-family="'Poppins', 'Quicksand', sans-serif" 
+        font-size="22" font-weight="700" fill="#27ae60" letter-spacing="-0.5">Heaven</text>
+  <circle cx="145" cy="25" r="2" fill="#2ecc71"/>
+  <text x="152" y="30" font-family="'Poppins', sans-serif" 
+        font-size="7" font-weight="400" fill="#7f8c8d" letter-spacing="0.5">BRING LIFE HOME</text>
 </svg>

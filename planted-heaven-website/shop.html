@@ -4,37 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop - Planted Heaven</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/complete-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Top Banner -->
-    <div class="top-banner">
-        🌿 Free Delivery on Orders Above ₹2000 | Based in East Delhi | Call: +91 9810629983
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="announcement-slider">
+            <div class="announcement-item">🌿 Free Delivery on Orders Above ₹2000</div>
+            <div class="announcement-item">🎁 Special Diwali Hampers Available</div>
+            <div class="announcement-item">📞 Call Us: +91 9810629983</div>
+        </div>
     </div>
 
-    <!-- Header/Navigation -->
-    <header>
-        <nav>
-            <div class="logo-section">
+    <!-- Header -->
+    <header class="modern-header">
+        <nav class="main-nav">
+            <div class="logo-wrapper">
                 <a href="index.html">
-                    <img src="images/logo.svg" alt="Planted Heaven" class="logo-img">
+                    <img src="images/logo.svg" alt="Planted Heaven" class="main-logo">
                 </a>
             </div>
+            
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="shop.html" class="active">Shop</a></li>
+                <li><a href="shop.html?category=indoor">Indoor Plants</a></li>
+                <li><a href="shop.html?category=corporate">Corporate Gifts</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            <div class="nav-icons">
-                <button class="icon-btn search-btn">🔍</button>
-                <button class="icon-btn wishlist-btn">❤️</button>
+
+            <div class="header-actions">
+                <button class="icon-btn search-toggle" onclick="toggleSearch()">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <button class="icon-btn">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </button>
                 <button class="icon-btn cart-btn">
-                    🛒
-                    <span class="cart-count">0</span>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-badge">0</span>
                 </button>
             </div>
+
             <div class="mobile-toggle" id="mobileToggle">
                 <span></span>
                 <span></span>
@@ -61,13 +83,11 @@
                     <button class="btn-clear-filters" onclick="clearFilters()">Clear All</button>
                 </div>
 
-                <!-- Search -->
                 <div class="filter-group">
                     <label>Search</label>
                     <input type="text" id="searchInput" placeholder="Search plants..." oninput="filterProducts()">
                 </div>
 
-                <!-- Category Filter -->
                 <div class="filter-group">
                     <label>Category</label>
                     <div class="checkbox-group">
@@ -79,7 +99,6 @@
                     </div>
                 </div>
 
-                <!-- Price Filter -->
                 <div class="filter-group">
                     <label>Price Range</label>
                     <div class="checkbox-group">
@@ -91,7 +110,6 @@
                     </div>
                 </div>
 
-                <!-- Size Filter -->
                 <div class="filter-group">
                     <label>Plant Size</label>
                     <div class="checkbox-group">
@@ -101,7 +119,6 @@
                     </div>
                 </div>
 
-                <!-- Mobile Filter Toggle -->
                 <button class="mobile-filter-toggle" onclick="toggleFilters()">
                     🎛️ Filters & Sort
                 </button>
@@ -109,7 +126,6 @@
 
             <!-- Products Area -->
             <div class="shop-products">
-                <!-- Toolbar -->
                 <div class="shop-toolbar">
                     <div class="results-count">
                         Showing <span id="productCount">0</span> products
@@ -126,64 +142,82 @@
                     </div>
                 </div>
 
-                <!-- Products Grid -->
                 <div class="products-grid" id="productsGrid">
-                    <!-- Products will be loaded here by JavaScript -->
+                    <!-- Products loaded by JavaScript -->
                 </div>
 
-                <!-- Pagination -->
                 <div class="pagination" id="pagination">
-                    <!-- Pagination will be loaded here -->
+                    <!-- Pagination loaded by JavaScript -->
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Planted Heaven</h4>
-                <p>Bringing life to corporate spaces and homes across India.</p>
-                <div class="social-links">
-                    <div class="social-icon">📸</div>
-                    <div class="social-icon">📘</div>
-                    <div class="social-icon">💬</div>
-                    <div class="social-icon">📧</div>
+    <footer class="modern-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="images/logo.svg" alt="Planted Heaven" class="footer-logo">
+                    <p class="footer-desc">Bringing life to corporate spaces and homes across India. We create living art with every plant.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon">📸</a>
+                        <a href="#" class="social-icon">📘</a>
+                        <a href="#" class="social-icon">💬</a>
+                        <a href="#" class="social-icon">📧</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="shop.html">Shop All</a></li>
+                        <li><a href="shop.html?category=indoor">Indoor Plants</a></li>
+                        <li><a href="shop.html?category=hampers">Gift Hampers</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="contact.html">Delivery Info</a></li>
+                        <li><a href="contact.html">Plant Care Guide</a></li>
+                        <li><a href="contact.html">FAQs</a></li>
+                        <li><a href="contact.html">Return Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>📍 East Delhi, India</li>
+                        <li>📞 <a href="tel:+919810629983">+91 9810629983</a></li>
+                        <li>📞 <a href="tel:+919220409985">+91 9220409985</a></li>
+                        <li>✉️ <a href="mailto:theplantedheaven2022@gmail.com">Email Us</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <a href="index.html">Home</a>
-                <a href="shop.html">Shop</a>
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Contact</a>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Planted Heaven. All rights reserved. | Designed with 💚 for plant lovers</p>
             </div>
-            <div class="footer-section">
-                <h4>Categories</h4>
-                <a href="shop.html?category=indoor">Indoor Plants</a>
-                <a href="shop.html?category=hampers">Gift Hampers</a>
-                <a href="shop.html?category=corporate">Corporate Gifts</a>
-                <a href="shop.html?category=bonsai">Bonsai Collection</a>
-            </div>
-            <div class="footer-section">
-                <h4>Contact Us</h4>
-                <p>📍 Based in East Delhi, India</p>
-                <p>📞 <a href="tel:+919810629983">+91 9810629983</a></p>
-                <p>📞 <a href="tel:+919220409985">+91 9220409985</a></p>
-                <p>✉️ <a href="mailto:theplantedheaven2022@gmail.com">Email Us</a></p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Planted Heaven. All rights reserved.</p>
         </div>
     </footer>
 
     <!-- Scroll to Top -->
-    <button class="scroll-top" id="scrollTop">↑</button>
+    <button class="scroll-top-modern" id="scrollTop">↑</button>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/919810629983" class="whatsapp-float" target="_blank">
+        <svg width="30" height="30" fill="white" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
 
     <script src="js/products-data.js"></script>
     <script src="js/shop.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/complete.js"></script>
 </body>
 </html>

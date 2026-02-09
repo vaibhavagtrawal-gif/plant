@@ -4,37 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Planted Heaven</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/complete-style.css">
 </head>
 <body>
-    <!-- Top Banner -->
-    <div class="top-banner">
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
         🌿 Free Delivery on Orders Above ₹2000 | Based in East Delhi | Call: +91 9810629983
     </div>
 
-    <!-- Header/Navigation -->
-    <header>
-        <nav>
-            <div class="logo-section">
+    <!-- Header -->
+    <header class="modern-header">
+        <nav class="main-nav">
+            <div class="logo-wrapper">
                 <a href="index.html">
-                    <img src="images/logo.svg" alt="Planted Heaven" class="logo-img">
+                    <img src="images/logo.svg" alt="Planted Heaven" class="main-logo">
                 </a>
             </div>
+            
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="shop.html">Shop</a></li>
+                <li><a href="shop.html?category=indoor">Indoor Plants</a></li>
+                <li><a href="shop.html?category=corporate">Corporate Gifts</a></li>
                 <li><a href="about.html" class="active">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            <div class="nav-icons">
-                <button class="icon-btn search-btn">🔍</button>
-                <button class="icon-btn wishlist-btn">❤️</button>
+
+            <div class="header-actions">
+                <button class="icon-btn">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <button class="icon-btn">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </button>
                 <button class="icon-btn cart-btn">
-                    🛒
-                    <span class="cart-count">0</span>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-badge">0</span>
                 </button>
             </div>
+
             <div class="mobile-toggle" id="mobileToggle">
                 <span></span>
                 <span></span>
@@ -59,8 +76,8 @@
                     <img src="https://images.unsplash.com/photo-1463320726281-696a485928c7?w=800" alt="Our Story">
                 </div>
                 <div class="story-content">
-                    <div class="section-label">Our Story</div>
-                    <h2>Where Nature Meets Nurture</h2>
+                    <div class="section-tag">Our Story</div>
+                    <h2 style="font-size: 3rem; color: var(--charcoal); margin-bottom: 1.5rem;">Where Nature Meets Nurture</h2>
                     <p>Born from a love for nature and a vision to reconnect people with the earth, Planted Heaven was founded to make green living more accessible, aesthetic, and meaningful.</p>
                     <p>We are a passionate, plant-loving company dedicated to bringing the calming beauty of greenery into everyday spaces. With a deep-rooted belief in the power of plants to heal, transform, and elevate, we curate lush green experiences for homes, offices, events, and more.</p>
                     <p>Whether it's a tiny desk succulent or an entire indoor jungle, we believe that plants have the power to turn any space into a sanctuary.</p>
@@ -69,57 +86,46 @@
         </div>
     </section>
 
-    <!-- Our Philosophy -->
+    <!-- Philosophy -->
     <section class="philosophy">
         <div class="container">
-            <div class="section-header center">
-                <div class="section-label">Our Philosophy</div>
+            <div class="section-header-modern">
+                <span class="section-tag">Our Philosophy</span>
                 <h2>We Create Living Art</h2>
-                <p>At Planted Heaven, we don't just sell plants — we create living art. Every leaf, every pot, and every setup is crafted with intention. Our goal is to inspire mindful living, nurture green habits, and make plant care a joyful, soulful experience.</p>
+                <p>At Planted Heaven, we don't just sell plants — we create living art. Every leaf, every pot, and every setup is crafted with intention.</p>
             </div>
         </div>
     </section>
 
     <!-- Founders -->
-    <section class="founders">
+    <section class="founders-modern">
         <div class="container">
-            <div class="section-header center">
-                <div class="section-label">Our Team</div>
-                <h2>Meet The Founders</h2>
+            <div class="section-header-modern">
+                <span class="section-tag">Our Team</span>
+                <h2>Meet the Founders</h2>
                 <p>The passionate minds behind Planted Heaven</p>
             </div>
-            <div class="founders-grid">
-                <div class="founder-card">
-                    <div class="founder-image-wrapper">
-                        <div class="founder-img-placeholder">👩‍🌾</div>
+
+            <div class="founders-grid-modern">
+                <div class="founder-card-modern">
+                    <div class="founder-image-modern">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600" alt="Diksha Bhutani">
                     </div>
-                    <div class="founder-content">
+                    <div class="founder-info-modern">
                         <h3>Diksha Bhutani</h3>
-                        <p class="founder-role">Founder & Creative Director</p>
-                        <p>Planted Heaven was started by a passionate plant lover who believes that greenery brings peace, joy, and life into any space. What began as a small personal hobby soon turned into a vision — to help more people experience the calm and beauty that plants offer.</p>
-                        <p>With a love for nature and a creative eye, Diksha built Planted Heaven to make plant care easy, meaningful, and stylish. Her goal is simple: to help you slow down, connect with nature, and grow something beautiful every day.</p>
-                        <div class="founder-social">
-                            <div class="social-icon">📸</div>
-                            <div class="social-icon">💬</div>
-                            <div class="social-icon">📧</div>
-                        </div>
+                        <p class="founder-title">Founder & Creative Director</p>
+                        <p class="founder-bio">Planted Heaven was started by a passionate plant lover who believes that greenery brings peace, joy, and life into any space. With a love for nature and a creative eye, Diksha built Planted Heaven to make plant care easy, meaningful, and stylish.</p>
                     </div>
                 </div>
 
-                <div class="founder-card">
-                    <div class="founder-image-wrapper">
-                        <div class="founder-img-placeholder">👨‍💼</div>
+                <div class="founder-card-modern">
+                    <div class="founder-image-modern">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600" alt="Mohit Bhutani">
                     </div>
-                    <div class="founder-content">
+                    <div class="founder-info-modern">
                         <h3>Mohit Bhutani</h3>
-                        <p class="founder-role">Co-Founder & Managing Director</p>
-                        <p>Meet Mohit, Co-founder of Planted Heaven, overseeing the brand's financial strategy and operations. He ensures sustainable growth while aligning business goals with the brand's green vision.</p>
-                        <p>He also serves as the Managing Director of Creative Signage Solutions, a leading firm in reflective media and signage solutions across India.</p>
-                        <div class="founder-social">
-                            <div class="social-icon">📸</div>
-                            <div class="social-icon">💼</div>
-                            <div class="social-icon">📧</div>
-                        </div>
+                        <p class="founder-title">Co-Founder & Managing Director</p>
+                        <p class="founder-bio">Meet Mohit, Co-founder of Planted Heaven, overseeing the brand's financial strategy and operations. He also serves as the Managing Director of Creative Signage Solutions, a leading firm in reflective media and signage solutions across India.</p>
                     </div>
                 </div>
             </div>
@@ -129,8 +135,8 @@
     <!-- Why Choose Us -->
     <section class="why-choose">
         <div class="container">
-            <div class="section-header center">
-                <div class="section-label">Why Choose Us</div>
+            <div class="section-header-modern">
+                <span class="section-tag">Why Choose Us</span>
                 <h2>What Makes Us Different</h2>
             </div>
             <div class="features-grid-about">
@@ -145,11 +151,6 @@
                     <p>Get expert advice on plant selection based on your space, lifestyle, and care preferences.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon-large">🎨</div>
-                    <h3>Aesthetic Presentation</h3>
-                    <p>Beautiful styling and eco-friendly packaging that makes every delivery special.</p>
-                </div>
-                <div class="feature-card">
                     <div class="feature-icon-large">🚚</div>
                     <h3>Reliable Delivery</h3>
                     <p>Safe transit through Ola & Uber across NCR with careful packaging to protect your plants.</p>
@@ -160,51 +161,14 @@
                     <p>Comprehensive care guides and ongoing support to help your plants thrive.</p>
                 </div>
                 <div class="feature-card">
+                    <div class="feature-icon-large">🎨</div>
+                    <h3>Aesthetic Presentation</h3>
+                    <p>Beautiful styling and eco-friendly packaging that makes every delivery special.</p>
+                </div>
+                <div class="feature-card">
                     <div class="feature-icon-large">🌱</div>
                     <h3>Growing Community</h3>
                     <p>Join our community of green lovers and conscious consumers passionate about plants.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- What We Offer -->
-    <section class="services-about">
-        <div class="container">
-            <div class="section-header center">
-                <div class="section-label">What We Offer</div>
-                <h2>Our Services</h2>
-            </div>
-            <div class="services-grid-about">
-                <div class="service-item">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600')"></div>
-                    <h3>Indoor & Outdoor Plants</h3>
-                    <p>Curated collection of premium plants for every space</p>
-                </div>
-                <div class="service-item">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1466781783364-36c955e42a7f?w=600')"></div>
-                    <h3>Plant Styling & Decor</h3>
-                    <p>Professional styling services for homes and offices</p>
-                </div>
-                <div class="service-item">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=600')"></div>
-                    <h3>Customized Green Gifting</h3>
-                    <p>Thoughtful hampers for special occasions</p>
-                </div>
-                <div class="service-item">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1470058869958-2a77ade41c02?w=600')"></div>
-                    <h3>Workshop and Events</h3>
-                    <p>Engaging workshops and event decorations</p>
-                </div>
-                <div class="service-item">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1511406361295-0a1ff814c0ce?w=600')"></div>
-                    <h3>Corporate Gifting</h3>
-                    <p>Premium solutions for corporate clients</p>
-                </div>
-                <div class="service-item">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1509423350716-97f9360b4e09?w=600')"></div>
-                    <h3>Green Corners</h3>
-                    <p>Complete office green corner setups</p>
                 </div>
             </div>
         </div>
@@ -217,54 +181,72 @@
                 <h2>Let's Grow Together!</h2>
                 <p>Whether you're a seasoned plant parent or just starting your green journey, Planted Heaven is your partner in growth.</p>
                 <div class="cta-buttons">
-                    <a href="shop.html" class="btn btn-primary">Start Shopping 🌿</a>
-                    <a href="contact.html" class="btn btn-outline">Contact Us</a>
+                    <a href="shop.html" class="btn-modern btn-primary">Start Shopping 🌿</a>
+                    <a href="contact.html" class="btn-modern btn-outline" style="color: white; border-color: white;">Contact Us</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Planted Heaven</h4>
-                <p>Bringing life to corporate spaces and homes across India.</p>
-                <div class="social-links">
-                    <div class="social-icon">📸</div>
-                    <div class="social-icon">📘</div>
-                    <div class="social-icon">💬</div>
-                    <div class="social-icon">📧</div>
+    <footer class="modern-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="images/logo.svg" alt="Planted Heaven" class="footer-logo">
+                    <p class="footer-desc">Bringing life to corporate spaces and homes across India.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon">📸</a>
+                        <a href="#" class="social-icon">📘</a>
+                        <a href="#" class="social-icon">💬</a>
+                        <a href="#" class="social-icon">📧</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="shop.html">Shop All</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="shop.html?category=indoor">Indoor Plants</a></li>
+                        <li><a href="shop.html?category=hampers">Gift Hampers</a></li>
+                        <li><a href="shop.html?category=corporate">Corporate Gifts</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>📍 East Delhi, India</li>
+                        <li>📞 <a href="tel:+919810629983">+91 9810629983</a></li>
+                        <li>📞 <a href="tel:+919220409985">+91 9220409985</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <a href="index.html">Home</a>
-                <a href="shop.html">Shop</a>
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Contact</a>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Planted Heaven. All rights reserved.</p>
             </div>
-            <div class="footer-section">
-                <h4>Categories</h4>
-                <a href="shop.html?category=indoor">Indoor Plants</a>
-                <a href="shop.html?category=hampers">Gift Hampers</a>
-                <a href="shop.html?category=corporate">Corporate Gifts</a>
-            </div>
-            <div class="footer-section">
-                <h4>Contact Us</h4>
-                <p>📍 Based in East Delhi, India</p>
-                <p>📞 <a href="tel:+919810629983">+91 9810629983</a></p>
-                <p>📞 <a href="tel:+919220409985">+91 9220409985</a></p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Planted Heaven. All rights reserved.</p>
         </div>
     </footer>
 
     <!-- Scroll to Top -->
-    <button class="scroll-top" id="scrollTop">↑</button>
+    <button class="scroll-top-modern" id="scrollTop">↑</button>
 
-    <script src="js/main.js"></script>
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919810629983" class="whatsapp-float" target="_blank">
+        <svg width="30" height="30" fill="white" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <script src="js/complete.js"></script>
 </body>
 </html>
